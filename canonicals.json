@@ -1,0 +1,16 @@
+[
+  {
+    "id" : "care",
+    "type" : "ImplementationGuide",
+    "url" : "https://fhir.ohc.network/ImplementationGuide/care",
+    "version" : "0.1.0",
+    "name" : "Care"
+  },
+  {
+    "id" : "MyPatient",
+    "type" : "StructureDefinition",
+    "url" : "https://fhir.ohc.network/StructureDefinition/MyPatient",
+    "version" : "0.1.0",
+    "name" : "MyPatient"
+  }
+]

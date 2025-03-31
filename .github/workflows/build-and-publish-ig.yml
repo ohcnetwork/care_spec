@@ -22,25 +22,28 @@ jobs:
       - name: Install SUSHI
         run: npm install -g fsh-sushi
 
-      - name: Run SUSHI to build IG
+      - name: Run SUSHI
         run: sushi .
 
-      - name: Install Jekyll
+      - name: Install Ruby and Jekyll
         run: |
           sudo apt-get update
           sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          echo '# Install Ruby Gems to ~/.local' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
+          export GEM_HOME="$HOME/gems"
+          export PATH="$HOME/gems/bin:$PATH"
           gem install jekyll bundler
 
-      - name: Download IG Publisher
+      - name: Download IG Publisher scripts
         run: |
-          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+          curl -O https://raw.githubusercontent.com/HL7/sample-ig/master/_updatePublisher.sh
+          curl -O https://raw.githubusercontent.com/HL7/sample-ig/master/_genonce.sh
+          chmod +x _updatePublisher.sh _genonce.sh
+
+      - name: Download latest IG Publisher
+        run: ./_updatePublisher.sh
 
       - name: Run IG Publisher
-        run: java -Xmx4G -jar publisher.jar -ig ig.ini
+        run: ./_genonce.sh
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

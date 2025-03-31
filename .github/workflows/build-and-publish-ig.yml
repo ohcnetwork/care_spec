@@ -37,9 +37,6 @@ jobs:
         run: |
           chmod +x _updatePublisher.sh _genonce.sh
 
-      - name: Download latest IG Publisher
-        run: ./_updatePublisher.sh
-
       - name: Run IG Publisher
         run: ./_genonce.sh
 

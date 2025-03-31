@@ -14,12 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies (Jekyll and Ruby)
+      - name: Install Jekyll and Ruby
         run: |
           sudo apt-get update
           sudo apt-get install -y ruby-full build-essential zlib1g-dev
@@ -32,6 +38,14 @@ jobs:
 
       - name: Run SUSHI
         run: sushi .
+
+      - name: Cache IG Publisher
+        uses: actions/cache@v4
+        with:
+          path: |
+            input-cache/publisher.jar
+          key: publisher-${{ hashFiles('_updatePublisher.sh') }}
+          restore-keys: publisher-
 
       - name: Set executable permissions for scripts
         run: |

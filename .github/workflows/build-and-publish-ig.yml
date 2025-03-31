@@ -51,7 +51,6 @@ jobs:
         run: |
           chmod +x ./_updatePublisher.sh
           chmod +x ./_genonce.sh
-          chmod +x ./_build.sh
 
       - name: Update IG Publisher
         run: ./_updatePublisher.sh -y

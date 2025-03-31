@@ -19,13 +19,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install SUSHI
-        run: npm install -g fsh-sushi
-
-      - name: Run SUSHI
-        run: sushi .
-
-      - name: Install Ruby and Jekyll
+      - name: Install dependencies (Jekyll and Ruby)
         run: |
           sudo apt-get update
           sudo apt-get install -y ruby-full build-essential zlib1g-dev
@@ -33,14 +27,25 @@ jobs:
           export PATH="$HOME/gems/bin:$PATH"
           gem install jekyll bundler
 
-      - name: Download IG Publisher scripts
-        run: |
-          chmod +x _updatePublisher.sh _genonce.sh
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
 
-      - name: Run IG Publisher
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Set executable permissions for scripts
+        run: |
+          chmod +x ./_updatePublisher.sh
+          chmod +x ./_genonce.sh
+          chmod +x ./_build.sh
+
+      - name: Update IG Publisher
+        run: ./_updatePublisher.sh -y
+
+      - name: Build IG
         run: ./_genonce.sh
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy IG to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

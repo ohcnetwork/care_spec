@@ -20,19 +20,27 @@ jobs:
           node-version: '20'
 
       - name: Install SUSHI
-        run: |
-          npm install -g fsh-sushi
+        run: npm install -g fsh-sushi
 
       - name: Run SUSHI to build IG
         run: sushi .
+
+      - name: Install Jekyll
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full build-essential zlib1g-dev
+          echo '# Install Ruby Gems to ~/.local' >> ~/.bashrc
+          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+          source ~/.bashrc
+          gem install jekyll bundler
 
       - name: Download IG Publisher
         run: |
           curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
 
       - name: Run IG Publisher
-        run: |
-          java -Xmx4G -jar publisher.jar -ig ig.ini
+        run: java -Xmx4G -jar publisher.jar -ig ig.ini
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

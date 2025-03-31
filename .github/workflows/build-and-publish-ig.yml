@@ -35,8 +35,8 @@ jobs:
 
       - name: Download IG Publisher scripts
         run: |
-          curl -O https://raw.githubusercontent.com/HL7/sample-ig/master/_updatePublisher.sh
-          curl -O https://raw.githubusercontent.com/HL7/sample-ig/master/_genonce.sh
+          curl -O https://raw.githubusercontent.com/HL7/sample-ig/main/_updatePublisher.sh
+          curl -O https://raw.githubusercontent.com/HL7/sample-ig/main/_genonce.sh
           chmod +x _updatePublisher.sh _genonce.sh
 
       - name: Download latest IG Publisher

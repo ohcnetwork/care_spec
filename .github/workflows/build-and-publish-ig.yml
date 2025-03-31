@@ -29,9 +29,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          echo 'export GEM_HOME="$HOME/gems"' >> $GITHUB_ENV
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
+          export GEM_HOME="$HOME/gems"
+          export PATH="$HOME/gems/bin:$PATH"
           gem install jekyll bundler
+          echo "GEM_HOME=$GEM_HOME" >> $GITHUB_ENV
+          echo "PATH=$PATH" >> $GITHUB_ENV
 
       - name: Install SUSHI
         run: npm install -g fsh-sushi

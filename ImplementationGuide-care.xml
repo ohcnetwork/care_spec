@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="Care"/>
   <status value="draft"/>
-  <date value="2025-03-31T19:37:46+00:00"/>
+  <date value="2025-03-31T20:19:32+00:00"/>
   <publisher value="Open Healthcare Network"/>
   <contact>
     <name value="Open Healthcare Network"/>
@@ -43,26 +43,47 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MyPatient"/>
+        <reference value="StructureDefinition/current-address-extension"/>
       </reference>
-      <name value="MyPatient"/>
-      <description value="An example profile of the Patient resource."/>
+      <name value="Current Address Extension"/>
+      <description value="Patient's current home address as plain text."/>
       <isExample value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="Patient/PatientExample"/>
+        <reference value="StructureDefinition/patient-profile"/>
       </reference>
-      <name value="PatientExample"/>
-      <description value="An example of a patient with a license to krill."/>
-      <isExample value="true"/>
-      <profile value="https://fhir.ohc.network/StructureDefinition/MyPatient"/>
+      <name value="Custom Patient Profile"/>
+      <description value="A profile that accurately represents patient demographic and contact details as specified."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/permanent-address-extension"/>
+      </reference>
+      <name value="Permanent Address Extension"/>
+      <description value="Patient's permanent billing address as plain text."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/phone-extension"/>
+      </reference>
+      <name value="Phone Extension"/>
+      <description value="A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings."/>
+      <isExample value="false"/>
     </resource>
     <page>
       <sourceUrl value="toc.html"/>

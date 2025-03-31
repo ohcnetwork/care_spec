@@ -132,7 +132,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#1">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#2">Example: Example Instances</a>
+         <a href="#2">Structures: Extension Definitions</a>
       </li>
    </ul>
 </div>
@@ -148,27 +148,46 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-MyPatient.html"
-                  title="StructureDefinition/MyPatient">MyPatient</a>
+               <a href="StructureDefinition-patient-profile.html"
+                  title="StructureDefinition/patient-profile">Custom Patient Profile</a>
             </td>
             <td>
-<p>An example profile of the Patient resource.</p>
+<p>A profile that accurately represents patient demographic and contact details as specified.</p>
 </td>
          </tr>
       </tbody>
    </table>
    <a name="2"> </a>
-   <h3>Example: Example Instances </h3>
-    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Patient-PatientExample.html" title="Patient/PatientExample">PatientExample</a>
+               <a href="StructureDefinition-current-address-extension.html"
+                  title="StructureDefinition/current-address-extension">Current Address Extension</a>
             </td>
             <td>
-<p>An example of a patient with a license to krill.</p>
+<p>Patient's current home address as plain text.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-permanent-address-extension.html"
+                  title="StructureDefinition/permanent-address-extension">Permanent Address Extension</a>
+            </td>
+            <td>
+<p>Patient's permanent billing address as plain text.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-phone-extension.html"
+                  title="StructureDefinition/phone-extension">Phone Extension</a>
+            </td>
+            <td>
+<p>A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings.</p>
 </td>
          </tr>
       </tbody>
@@ -191,7 +210,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://ohc.network">Open Healthcare Network</a>.  Package care#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Mon, Mar 31, 2025 19:38+0000">2025-03-31</span>
+          IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://ohc.network">Open Healthcare Network</a>.  Package care#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Mon, Mar 31, 2025 20:19+0000">2025-03-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

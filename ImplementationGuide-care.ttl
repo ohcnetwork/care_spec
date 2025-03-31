@@ -17,7 +17,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "Care"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-31T19:37:46+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-31T20:19:32+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Open Healthcare Network"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Open Healthcare Network" ] ;
@@ -73,35 +73,61 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
-           fhir:v "StructureDefinition:resource"
+           fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://fhir.ohc.network/StructureDefinition/MyPatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/MyPatient" ]
+         fhir:link <https://fhir.ohc.network/StructureDefinition/current-address-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/current-address-extension" ]
        ] ;
-       fhir:name [ fhir:v "MyPatient" ] ;
-       fhir:description [ fhir:v "An example profile of the Patient resource." ] ;
+       fhir:name [ fhir:v "Current Address Extension" ] ;
+       fhir:description [ fhir:v "Patient's current home address as plain text." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
-           fhir:v "Patient"
+           fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://fhir.ohc.network/Patient/PatientExample> ;
-         fhir:reference [ fhir:v "Patient/PatientExample" ]
+         fhir:link <https://fhir.ohc.network/StructureDefinition/patient-profile> ;
+         fhir:reference [ fhir:v "StructureDefinition/patient-profile" ]
        ] ;
-       fhir:name [ fhir:v "PatientExample" ] ;
-       fhir:description [ fhir:v "An example of a patient with a license to krill." ] ;
-       fhir:isExample [ fhir:v true ] ;
-       fhir:profile ( [
-         fhir:v "https://fhir.ohc.network/StructureDefinition/MyPatient"^^xsd:anyURI ;
-         fhir:link <https://fhir.ohc.network/StructureDefinition/MyPatient>
-       ] )
+       fhir:name [ fhir:v "Custom Patient Profile" ] ;
+       fhir:description [ fhir:v "A profile that accurately represents patient demographic and contact details as specified." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ohc.network/StructureDefinition/permanent-address-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/permanent-address-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Permanent Address Extension" ] ;
+       fhir:description [ fhir:v "Patient's permanent billing address as plain text." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ohc.network/StructureDefinition/phone-extension> ;
+         fhir:reference [ fhir:v "StructureDefinition/phone-extension" ]
+       ] ;
+       fhir:name [ fhir:v "Phone Extension" ] ;
+       fhir:description [ fhir:v "A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings." ] ;
+       fhir:isExample [ fhir:v false ]
      ] ) ;
      fhir:page [
        fhir:source [

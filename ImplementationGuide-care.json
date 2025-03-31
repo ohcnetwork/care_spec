@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "Care",
   "status" : "draft",
-  "date" : "2025-03-31T19:37:46+00:00",
+  "date" : "2025-03-31T20:19:32+00:00",
   "publisher" : "Open Healthcare Network",
   "contact" : [{
     "name" : "Open Healthcare Network",
@@ -49,27 +49,50 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MyPatient"
+        "reference" : "StructureDefinition/current-address-extension"
       },
-      "name" : "MyPatient",
-      "description" : "An example profile of the Patient resource.",
+      "name" : "Current Address Extension",
+      "description" : "Patient's current home address as plain text.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
+        "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "Patient/PatientExample"
+        "reference" : "StructureDefinition/patient-profile"
       },
-      "name" : "PatientExample",
-      "description" : "An example of a patient with a license to krill.",
-      "isExample" : true,
-      "profile" : ["https://fhir.ohc.network/StructureDefinition/MyPatient"]
+      "name" : "Custom Patient Profile",
+      "description" : "A profile that accurately represents patient demographic and contact details as specified.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/permanent-address-extension"
+      },
+      "name" : "Permanent Address Extension",
+      "description" : "Patient's permanent billing address as plain text.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/phone-extension"
+      },
+      "name" : "Phone Extension",
+      "description" : "A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings.",
+      "isExample" : false
     }],
     "page" : {
       "sourceUrl" : "toc.html",

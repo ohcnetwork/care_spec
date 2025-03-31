@@ -1,6 +1,30 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://hl7.org/fhir/address-type",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "AddressType",
+      "title" : "AddressType",
+      "description" : "The type of an address (physical / postal).",
+      "oids" : ["2.16.840.1.113883.4.642.1.70"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-address-type.html" : "AddressType"
+    },
+    {
+      "url" : "http://hl7.org/fhir/address-use",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "AddressUse",
+      "title" : "AddressUse",
+      "description" : "The use of an address.",
+      "oids" : ["2.16.840.1.113883.4.642.1.68"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-address-use.html" : "AddressUse"
+    },
+    {
       "url" : "http://hl7.org/fhir/administrative-gender",
       "version" : "5.0.0",
       "status" : "active",

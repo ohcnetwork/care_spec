@@ -1,1 +1,2 @@
 URL,Version,Status,OIDs,Name,Title,Descriptino,Uses,Used,Sources
+http://hl7.org/fhir/ValueSet/marital-status,5.0.0,active,"2.16.840.1.113883.4.642.3.29",MaritalStatusCodes,Marital Status Codes,"This value set defines the set of codes that can be used to indicate the marital status of a person.","StructureDefinition/patient-profile","THO (V3)"

@@ -7,10 +7,31 @@
     "name" : "Care"
   },
   {
-    "id" : "MyPatient",
+    "id" : "current-address-extension",
     "type" : "StructureDefinition",
-    "url" : "https://fhir.ohc.network/StructureDefinition/MyPatient",
+    "url" : "https://fhir.ohc.network/StructureDefinition/current-address-extension",
     "version" : "0.1.0",
-    "name" : "MyPatient"
+    "name" : "CurrentAddressExtension"
+  },
+  {
+    "id" : "patient-profile",
+    "type" : "StructureDefinition",
+    "url" : "https://fhir.ohc.network/StructureDefinition/patient-profile",
+    "version" : "0.1.0",
+    "name" : "PatientProfile"
+  },
+  {
+    "id" : "permanent-address-extension",
+    "type" : "StructureDefinition",
+    "url" : "https://fhir.ohc.network/StructureDefinition/permanent-address-extension",
+    "version" : "0.1.0",
+    "name" : "PermanentAddressExtension"
+  },
+  {
+    "id" : "phone-extension",
+    "type" : "StructureDefinition",
+    "url" : "https://fhir.ohc.network/StructureDefinition/phone-extension",
+    "version" : "0.1.0",
+    "name" : "PhoneExtension"
   }
 ]

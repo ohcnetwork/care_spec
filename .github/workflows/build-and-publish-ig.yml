@@ -1,0 +1,41 @@
+name: Build and Publish FHIR IG
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-ig:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install SUSHI
+        run: |
+          npm install -g fsh-sushi
+
+      - name: Run SUSHI to build IG
+        run: sushi .
+
+      - name: Download IG Publisher
+        run: |
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+
+      - name: Run IG Publisher
+        run: |
+          java -Xmx4G -jar publisher.jar -ig ig.ini
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output

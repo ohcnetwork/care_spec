@@ -1,0 +1,150 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-specimen-definition-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-specimen-definition-profile",
+  "version": "0.1.0",
+  "name": "CareSpecimenDefinitionProfile",
+  "title": "Care Specimen Definition Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for SpecimenDefinition resource representing specimen definitions and requirements in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "SpecimenDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/SpecimenDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "SpecimenDefinition",
+        "path": "SpecimenDefinition",
+        "short": "Care Specimen Definition Profile"
+      },
+      {
+        "id": "SpecimenDefinition.url",
+        "path": "SpecimenDefinition.url",
+        "short": "Canonical URL",
+        "definition": "Canonical identifier for this specimen definition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.version",
+        "path": "SpecimenDefinition.version",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.title",
+        "path": "SpecimenDefinition.title",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.status",
+        "path": "SpecimenDefinition.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.description",
+        "path": "SpecimenDefinition.description",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.typeCollected",
+        "path": "SpecimenDefinition.typeCollected",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.patientPreparation",
+        "path": "SpecimenDefinition.patientPreparation",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.collection",
+        "path": "SpecimenDefinition.collection",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.typeTested",
+        "path": "SpecimenDefinition.typeTested",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "SpecimenDefinition.extension",
+        "path": "SpecimenDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "SpecimenDefinition.extension:slug",
+        "path": "SpecimenDefinition.extension",
+        "sliceName": "slug",
+        "short": "Slug",
+        "definition": "URL-friendly identifier for this specimen definition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "SpecimenDefinition.extension:facilityScope",
+        "path": "SpecimenDefinition.extension",
+        "sliceName": "facilityScope",
+        "short": "Facility Scope",
+        "definition": "Facility this definition applies to",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

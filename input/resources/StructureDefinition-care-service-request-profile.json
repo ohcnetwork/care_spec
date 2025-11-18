@@ -40,8 +40,23 @@
       {
         "id": "ServiceRequest.category",
         "path": "ServiceRequest.category",
-        "min": 0,
-        "max": "*"
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.priority",
+        "path": "ServiceRequest.priority",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.doNotPerform",
+        "path": "ServiceRequest.doNotPerform",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "ServiceRequest.code",
@@ -70,11 +85,89 @@
         "path": "ServiceRequest.encounter",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.occurrenceDateTime",
+        "path": "ServiceRequest.occurrenceDateTime",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.requester",
+        "path": "ServiceRequest.requester",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.bodySite",
+        "path": "ServiceRequest.bodySite",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ServiceRequest.locationReference",
+        "path": "ServiceRequest.locationReference",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.patientInstruction",
+        "path": "ServiceRequest.patientInstruction",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ServiceRequest.note",
+        "path": "ServiceRequest.note",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ServiceRequest.extension",
+        "path": "ServiceRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ServiceRequest.extension:tags",
+        "path": "ServiceRequest.extension",
+        "sliceName": "tags",
+        "short": "Care Tags",
+        "definition": "Tags for categorization and filtering",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
             ]
           }
         ]

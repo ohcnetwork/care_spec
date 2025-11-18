@@ -31,23 +31,70 @@
         "mustSupport": true
       },
       {
+        "id": "Questionnaire.version",
+        "path": "Questionnaire.version",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "Questionnaire.title",
         "path": "Questionnaire.title",
-        "min": 0,
+        "min": 1,
         "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.subjectType",
+        "path": "Questionnaire.subjectType",
+        "min": 0,
+        "max": "*",
         "mustSupport": true
       },
       {
         "id": "Questionnaire.description",
         "path": "Questionnaire.description",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Questionnaire.item",
         "path": "Questionnaire.item",
         "min": 0,
-        "max": "*"
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.extension",
+        "path": "Questionnaire.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Questionnaire.extension:tags",
+        "path": "Questionnaire.extension",
+        "sliceName": "tags",
+        "short": "Care Tags",
+        "definition": "Tags for categorization",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+            ]
+          }
+        ]
       }
     ]
   }

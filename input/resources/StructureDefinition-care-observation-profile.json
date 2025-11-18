@@ -83,7 +83,7 @@
         "path": "Observation.encounter",
         "short": "Encounter",
         "definition": "Healthcare event during which this observation is made",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true,
         "type": [
@@ -94,6 +94,15 @@
             ]
           }
         ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Performer",
+        "definition": "Who is responsible for the observation",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
       },
       {
         "id": "Observation.effective[x]",
@@ -136,6 +145,65 @@
         "definition": "How it was done",
         "min": 0,
         "max": "1"
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "short": "Reference Range",
+        "definition": "Provides guide for interpretation",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Interpretation",
+        "definition": "High, low, normal, etc",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "Has Member",
+        "definition": "Related resource that belongs to the Observation group",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-observation-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.partOf",
+        "path": "Observation.partOf",
+        "short": "Part Of",
+        "definition": "A larger event of which this particular observation is a component or step",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-diagnostic-report-profile",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "short": "Focus",
+        "definition": "What the observation is about, when it is not about the subject of record",
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "Observation.component",

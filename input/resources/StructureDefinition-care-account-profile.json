@@ -33,9 +33,37 @@
       {
         "id": "Account.name",
         "path": "Account.name",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
+      },
+      {
+        "id": "Account.extension",
+        "path": "Account.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Account.extension:billingStatus",
+        "path": "Account.extension",
+        "sliceName": "billingStatus",
+        "short": "Billing Status",
+        "definition": "Billing-specific status field",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
       },
       {
         "id": "Account.servicePeriod",
@@ -47,13 +75,31 @@
       {
         "id": "Account.subject",
         "path": "Account.subject",
-        "min": 0,
+        "min": 1,
         "max": "*",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Account.owner",
+        "path": "Account.owner",
+        "short": "Facility",
+        "definition": "The facility that owns this account",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ]

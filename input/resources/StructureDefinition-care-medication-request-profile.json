@@ -61,7 +61,7 @@
       {
         "id": "MedicationRequest.doNotPerform",
         "path": "MedicationRequest.doNotPerform",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -90,7 +90,7 @@
       {
         "id": "MedicationRequest.encounter",
         "path": "MedicationRequest.encounter",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true,
         "type": [
@@ -98,6 +98,22 @@
             "code": "Reference",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.basedOn",
+        "path": "MedicationRequest.basedOn",
+        "short": "Based On",
+        "definition": "A plan or request that is fulfilled in whole or in part by this medication request (prescription)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
             ]
           }
         ]
@@ -120,13 +136,56 @@
         "id": "MedicationRequest.requester",
         "path": "MedicationRequest.requester",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "MedicationRequest.note",
         "path": "MedicationRequest.note",
         "min": 0,
         "max": "*"
+      },
+      {
+        "id": "MedicationRequest.extension",
+        "path": "MedicationRequest.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationRequest.extension:dispenseStatus",
+        "path": "MedicationRequest.extension",
+        "sliceName": "dispenseStatus",
+        "short": "Dispense Status",
+        "definition": "Status of medication dispensing for this request",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.extension:requestedProduct",
+        "path": "MedicationRequest.extension",
+        "sliceName": "requestedProduct",
+        "short": "Requested Product",
+        "definition": "Specific product knowledge item requested",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
       }
     ]
   }

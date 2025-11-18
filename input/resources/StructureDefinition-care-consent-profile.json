@@ -33,14 +33,28 @@
       {
         "id": "Consent.category",
         "path": "Consent.category",
-        "min": 0,
+        "min": 1,
         "max": "*",
         "mustSupport": true
       },
       {
+        "id": "Consent.subject",
+        "path": "Consent.subject",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Consent.dateTime",
         "path": "Consent.dateTime",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -53,8 +67,9 @@
       {
         "id": "Consent.encounter",
         "path": "Consent.encounter",
-        "min": 0,
+        "min": 1,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",

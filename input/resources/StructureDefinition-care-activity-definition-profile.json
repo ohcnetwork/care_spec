@@ -1,0 +1,280 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-activity-definition-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-activity-definition-profile",
+  "version": "0.1.0",
+  "name": "CareActivityDefinitionProfile",
+  "title": "Care Activity Definition Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for ActivityDefinition resource representing activity definitions and service catalog items in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ActivityDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ActivityDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ActivityDefinition",
+        "path": "ActivityDefinition",
+        "short": "Care Activity Definition Profile"
+      },
+      {
+        "id": "ActivityDefinition.url",
+        "path": "ActivityDefinition.url",
+        "short": "Canonical URL",
+        "definition": "Canonical identifier for this activity definition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.version",
+        "path": "ActivityDefinition.version",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.title",
+        "path": "ActivityDefinition.title",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.status",
+        "path": "ActivityDefinition.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.description",
+        "path": "ActivityDefinition.description",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.purpose",
+        "path": "ActivityDefinition.purpose",
+        "short": "Usage",
+        "definition": "Usage information for this activity definition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.kind",
+        "path": "ActivityDefinition.kind",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.code",
+        "path": "ActivityDefinition.code",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ActivityDefinition.bodySite",
+        "path": "ActivityDefinition.bodySite",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ActivityDefinition.specimenRequirement",
+        "path": "ActivityDefinition.specimenRequirement",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-specimen-definition-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.observationRequirement",
+        "path": "ActivityDefinition.observationRequirement",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-observation-definition-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.location",
+        "path": "ActivityDefinition.location",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension",
+        "path": "ActivityDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ActivityDefinition.extension:slug",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "slug",
+        "short": "Slug",
+        "definition": "URL-friendly identifier for this activity definition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:classification",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "classification",
+        "short": "Classification",
+        "definition": "Classification of the activity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:chargeItemDefinitions",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "chargeItemDefinitions",
+        "short": "Charge Item Definitions",
+        "definition": "Associated charge item definitions",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:diagnosticReportCodes",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "diagnosticReportCodes",
+        "short": "Diagnostic Report Codes",
+        "definition": "Codes for diagnostic reports",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:healthcareService",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "healthcareService",
+        "short": "Healthcare Service",
+        "definition": "Associated healthcare service",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:tags",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "tags",
+        "short": "Care Tags",
+        "definition": "Tags for categorization",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:category",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "category",
+        "short": "Resource Category",
+        "definition": "Resource category classification",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ActivityDefinition.extension:facilityScope",
+        "path": "ActivityDefinition.extension",
+        "sliceName": "facilityScope",
+        "short": "Facility Scope",
+        "definition": "Facility this definition applies to",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

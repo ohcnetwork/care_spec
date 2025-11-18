@@ -1,0 +1,178 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-observation-definition-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-observation-definition-profile",
+  "version": "0.1.0",
+  "name": "CareObservationDefinitionProfile",
+  "title": "Care Observation Definition Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for ObservationDefinition resource representing observation definitions and lab test catalog items in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ObservationDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ObservationDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ObservationDefinition",
+        "path": "ObservationDefinition",
+        "short": "Care Observation Definition Profile"
+      },
+      {
+        "id": "ObservationDefinition.url",
+        "path": "ObservationDefinition.url",
+        "short": "Canonical URL",
+        "definition": "Canonical identifier for this observation definition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.version",
+        "path": "ObservationDefinition.version",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.title",
+        "path": "ObservationDefinition.title",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.status",
+        "path": "ObservationDefinition.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.description",
+        "path": "ObservationDefinition.description",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.category",
+        "path": "ObservationDefinition.category",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.code",
+        "path": "ObservationDefinition.code",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.permittedDataType",
+        "path": "ObservationDefinition.permittedDataType",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.bodySite",
+        "path": "ObservationDefinition.bodySite",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ObservationDefinition.method",
+        "path": "ObservationDefinition.method",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "ObservationDefinition.permittedUnit",
+        "path": "ObservationDefinition.permittedUnit",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.qualifiedValue",
+        "path": "ObservationDefinition.qualifiedValue",
+        "short": "Qualified Ranges",
+        "definition": "Qualified value ranges for interpretation",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.component",
+        "path": "ObservationDefinition.component",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ObservationDefinition.extension",
+        "path": "ObservationDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ObservationDefinition.extension:slug",
+        "path": "ObservationDefinition.extension",
+        "sliceName": "slug",
+        "short": "Slug",
+        "definition": "URL-friendly identifier for this observation definition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ObservationDefinition.extension:facilityScope",
+        "path": "ObservationDefinition.extension",
+        "sliceName": "facilityScope",
+        "short": "Facility Scope",
+        "definition": "Facility this definition applies to",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

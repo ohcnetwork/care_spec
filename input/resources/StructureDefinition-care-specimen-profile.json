@@ -24,23 +24,34 @@
         "short": "Care Specimen Profile"
       },
       {
+        "id": "Specimen.identifier",
+        "path": "Specimen.identifier",
+        "short": "Accession Identifier",
+        "definition": "External and accession identifiers",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
         "id": "Specimen.status",
         "path": "Specimen.status",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "Specimen.type",
         "path": "Specimen.type",
-        "min": 0,
-        "max": "1"
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Specimen.subject",
         "path": "Specimen.subject",
-        "min": 0,
+        "min": 1,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
@@ -51,10 +62,52 @@
         ]
       },
       {
+        "id": "Specimen.request",
+        "path": "Specimen.request",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-service-request-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.receivedTime",
+        "path": "Specimen.receivedTime",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "Specimen.collection",
         "path": "Specimen.collection",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.processing",
+        "path": "Specimen.processing",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.condition",
+        "path": "Specimen.condition",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.note",
+        "path": "Specimen.note",
+        "min": 0,
+        "max": "*"
       }
     ]
   }

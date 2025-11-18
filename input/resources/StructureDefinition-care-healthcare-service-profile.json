@@ -33,7 +33,7 @@
       {
         "id": "HealthcareService.name",
         "path": "HealthcareService.name",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -61,16 +61,26 @@
       {
         "id": "HealthcareService.providedBy",
         "path": "HealthcareService.providedBy",
+        "short": "Managing Organization",
+        "definition": "Facility organization managing this service",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
+              "https://fhir.ohc.network/StructureDefinition/care-facility-organization-profile"
             ]
           }
         ]
+      },
+      {
+        "id": "HealthcareService.comment",
+        "path": "HealthcareService.comment",
+        "short": "Extra Details",
+        "definition": "Additional details about the service",
+        "min": 0,
+        "max": "1"
       }
     ]
   }

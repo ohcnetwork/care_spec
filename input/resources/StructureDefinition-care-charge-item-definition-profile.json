@@ -1,0 +1,152 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-charge-item-definition-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-charge-item-definition-profile",
+  "version": "0.1.0",
+  "name": "CareChargeItemDefinitionProfile",
+  "title": "Care Charge Item Definition Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for ChargeItemDefinition resource representing charge item definitions and pricing in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ChargeItemDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ChargeItemDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ChargeItemDefinition",
+        "path": "ChargeItemDefinition",
+        "short": "Care Charge Item Definition Profile"
+      },
+      {
+        "id": "ChargeItemDefinition.url",
+        "path": "ChargeItemDefinition.url",
+        "short": "Canonical URL",
+        "definition": "Canonical identifier for this charge item definition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.version",
+        "path": "ChargeItemDefinition.version",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.title",
+        "path": "ChargeItemDefinition.title",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.status",
+        "path": "ChargeItemDefinition.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.description",
+        "path": "ChargeItemDefinition.description",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.purpose",
+        "path": "ChargeItemDefinition.purpose",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.propertyGroup",
+        "path": "ChargeItemDefinition.propertyGroup",
+        "short": "Price Components",
+        "definition": "Price components and pricing information",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ChargeItemDefinition.extension",
+        "path": "ChargeItemDefinition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ChargeItemDefinition.extension:slug",
+        "path": "ChargeItemDefinition.extension",
+        "sliceName": "slug",
+        "short": "Slug",
+        "definition": "URL-friendly identifier for this charge item definition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ChargeItemDefinition.extension:category",
+        "path": "ChargeItemDefinition.extension",
+        "sliceName": "category",
+        "short": "Resource Category",
+        "definition": "Resource category classification",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ChargeItemDefinition.extension:facilityScope",
+        "path": "ChargeItemDefinition.extension",
+        "sliceName": "facilityScope",
+        "short": "Facility Scope",
+        "definition": "Facility this definition applies to",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

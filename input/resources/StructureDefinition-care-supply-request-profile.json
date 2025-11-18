@@ -26,21 +26,52 @@
       {
         "id": "SupplyRequest.status",
         "path": "SupplyRequest.status",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "SupplyRequest.category",
         "path": "SupplyRequest.category",
-        "min": 0,
-        "max": "*"
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "SupplyRequest.priority",
         "path": "SupplyRequest.priority",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SupplyRequest.deliverFrom",
+        "path": "SupplyRequest.deliverFrom",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SupplyRequest.deliverTo",
+        "path": "SupplyRequest.deliverTo",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
       },
       {
         "id": "SupplyRequest.item",

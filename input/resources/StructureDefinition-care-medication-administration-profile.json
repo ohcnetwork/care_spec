@@ -31,6 +31,20 @@
         "mustSupport": true
       },
       {
+        "id": "MedicationAdministration.statusReason",
+        "path": "MedicationAdministration.statusReason",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category",
+        "path": "MedicationAdministration.category",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationAdministration.medication[x]",
         "path": "MedicationAdministration.medication[x]",
         "min": 1,
@@ -57,6 +71,7 @@
         "path": "MedicationAdministration.encounter",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
@@ -65,6 +80,42 @@
             ]
           }
         ]
+      },
+      {
+        "id": "MedicationAdministration.request",
+        "path": "MedicationAdministration.request",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-medication-request-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.occurredDateTime",
+        "path": "MedicationAdministration.occurredDateTime",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.recorded",
+        "path": "MedicationAdministration.recorded",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.performer",
+        "path": "MedicationAdministration.performer",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
       },
       {
         "id": "MedicationAdministration.effective[x]",
@@ -77,7 +128,42 @@
         "id": "MedicationAdministration.dosage",
         "path": "MedicationAdministration.dosage",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.note",
+        "path": "MedicationAdministration.note",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "MedicationAdministration.extension",
+        "path": "MedicationAdministration.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationAdministration.extension:administeredProduct",
+        "path": "MedicationAdministration.extension",
+        "sliceName": "administeredProduct",
+        "short": "Administered Product",
+        "definition": "Specific product knowledge item that was administered",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
       }
     ]
   }

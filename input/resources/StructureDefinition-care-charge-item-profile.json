@@ -57,6 +57,7 @@
         "path": "ChargeItem.context",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
@@ -69,8 +70,9 @@
       {
         "id": "ChargeItem.account",
         "path": "ChargeItem.account",
-        "min": 0,
+        "min": 1,
         "max": "*",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
@@ -79,6 +81,18 @@
             ]
           }
         ]
+      },
+      {
+        "id": "ChargeItem.performer",
+        "path": "ChargeItem.performer",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ChargeItem.service",
+        "path": "ChargeItem.service",
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "ChargeItem.quantity",
@@ -92,6 +106,77 @@
         "path": "ChargeItem.priceOverride",
         "min": 0,
         "max": "1"
+      },
+      {
+        "id": "ChargeItem.overrideReason",
+        "path": "ChargeItem.overrideReason",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ChargeItem.note",
+        "path": "ChargeItem.note",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "ChargeItem.extension",
+        "path": "ChargeItem.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ChargeItem.extension:title",
+        "path": "ChargeItem.extension",
+        "sliceName": "title",
+        "short": "Title",
+        "definition": "Title for the charge item",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ChargeItem.extension:description",
+        "path": "ChargeItem.extension",
+        "sliceName": "description",
+        "short": "Description",
+        "definition": "Description of the charge item",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "ChargeItem.extension:tags",
+        "path": "ChargeItem.extension",
+        "sliceName": "tags",
+        "short": "Care Tags",
+        "definition": "Tags for categorization",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -34,7 +34,8 @@
         "id": "DiagnosticReport.category",
         "path": "DiagnosticReport.category",
         "min": 0,
-        "max": "*"
+        "max": "*",
+        "mustSupport": true
       },
       {
         "id": "DiagnosticReport.code",
@@ -61,13 +62,29 @@
       {
         "id": "DiagnosticReport.encounter",
         "path": "DiagnosticReport.encounter",
-        "min": 0,
+        "min": 1,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.basedOn",
+        "path": "DiagnosticReport.basedOn",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-service-request-profile"
             ]
           }
         ]

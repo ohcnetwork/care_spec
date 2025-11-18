@@ -203,11 +203,52 @@
         "definition": "Patient's blood group",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:tags",
+        "path": "Patient.extension",
+        "sliceName": "tags",
+        "short": "Care Tags",
+        "definition": "Tags for categorization and filtering of patients",
+        "min": 0,
+        "max": "*",
         "type": [
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
+              "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "short": "Patient Identifiers",
+        "definition": "Patient identifiers including instance and facility identifiers",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.managingOrganization",
+        "path": "Patient.managingOrganization",
+        "short": "Managing Organization",
+        "definition": "Organization that is the custodian of the patient record",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
             ]
           }
         ]

@@ -24,23 +24,30 @@
         "short": "Care Device Profile"
       },
       {
+        "id": "Device.identifier",
+        "path": "Device.identifier",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
         "id": "Device.status",
         "path": "Device.status",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "Device.availabilityStatus",
         "path": "Device.availabilityStatus",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "Device.manufacturer",
         "path": "Device.manufacturer",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -87,15 +94,22 @@
         "max": "1"
       },
       {
+        "id": "Device.contact",
+        "path": "Device.contact",
+        "min": 0,
+        "max": "*"
+      },
+      {
         "id": "Device.owner",
         "path": "Device.owner",
-        "min": 0,
+        "min": 1,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
+              "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ]
@@ -105,12 +119,55 @@
         "path": "Device.location",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-location-profile"
             ]
+          }
+        ]
+      },
+      {
+        "id": "Device.extension",
+        "path": "Device.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Device.extension:currentEncounter",
+        "path": "Device.extension",
+        "sliceName": "currentEncounter",
+        "short": "Current Encounter",
+        "definition": "The current encounter this device is associated with",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Device.extension:managingOrganization",
+        "path": "Device.extension",
+        "sliceName": "managingOrganization",
+        "short": "Managing Organization",
+        "definition": "Facility organization managing this device",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
           }
         ]
       }

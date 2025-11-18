@@ -31,6 +31,20 @@
         "mustSupport": true
       },
       {
+        "id": "MedicationDispense.notPerformedReason",
+        "path": "MedicationDispense.notPerformedReason",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.category",
+        "path": "MedicationDispense.category",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationDispense.medication[x]",
         "path": "MedicationDispense.medication[x]",
         "min": 1,
@@ -53,16 +67,159 @@
         ]
       },
       {
+        "id": "MedicationDispense.encounter",
+        "path": "MedicationDispense.encounter",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.authorizingPrescription",
+        "path": "MedicationDispense.authorizingPrescription",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-medication-request-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.location",
+        "path": "MedicationDispense.location",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
+      },
+      {
         "id": "MedicationDispense.performer",
         "path": "MedicationDispense.performer",
         "min": 0,
         "max": "*"
       },
       {
+        "id": "MedicationDispense.quantity",
+        "path": "MedicationDispense.quantity",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.daysSupply",
+        "path": "MedicationDispense.daysSupply",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.whenPrepared",
+        "path": "MedicationDispense.whenPrepared",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.whenHandedOver",
+        "path": "MedicationDispense.whenHandedOver",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
         "id": "MedicationDispense.dosageInstruction",
         "path": "MedicationDispense.dosageInstruction",
         "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.substitution",
+        "path": "MedicationDispense.substitution",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.note",
+        "path": "MedicationDispense.note",
+        "min": 0,
         "max": "*"
+      },
+      {
+        "id": "MedicationDispense.extension",
+        "path": "MedicationDispense.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationDispense.extension:inventoryItem",
+        "path": "MedicationDispense.extension",
+        "sliceName": "inventoryItem",
+        "short": "Inventory Item",
+        "definition": "The inventory item that was dispensed",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.extension:chargeItem",
+        "path": "MedicationDispense.extension",
+        "sliceName": "chargeItem",
+        "short": "Charge Item",
+        "definition": "Associated charge item for this dispense",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.extension:order",
+        "path": "MedicationDispense.extension",
+        "sliceName": "order",
+        "short": "Dispense Order",
+        "definition": "The dispense order this dispense belongs to",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
       }
     ]
   }

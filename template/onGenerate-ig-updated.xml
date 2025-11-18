@@ -1,0 +1,1313 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+   <id value="care"/>
+   <text>
+      <status value="generated"/>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+         <p class="res-header-id">
+            <b>Generated Narrative: ImplementationGuide care</b>
+         </p>
+         <a name="care"> </a>
+         <a name="hccare"> </a>
+         <h2>Care</h2>
+         <p>The official URL for this implementation guide is: </p>
+         <pre>https://fhir.ohc.network/ImplementationGuide/care</pre>
+         <div>
+            <p>FHIR Implementation Guide for Care - a Digital Public Good enabling Decentralized Administration of Healthcare. This IG documents all Care EMR models as FHIR R5 resources, profiles, and extensions.</p>
+         </div>
+      </div>
+   </text>
+   <url value="https://fhir.ohc.network/ImplementationGuide/care"/>
+   <version value="0.1.0"/>
+   <name value="Care"/>
+   <title value="Care FHIR Implementation Guide"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <date value="2025-01-27"/>
+   <publisher value="Open Healthcare Network"/>
+   <contact>
+      <name value="Open Healthcare Network"/>
+      <telecom>
+         <system value="url"/>
+         <value value="https://ohc.network"/>
+      </telecom>
+   </contact>
+   <description value="FHIR Implementation Guide for Care - a Digital Public Good enabling Decentralized Administration of Healthcare. This IG documents all Care EMR models as FHIR R5 resources, profiles, and extensions."/>
+   <copyright value="Copyright © 2025+ Open Healthcare Network"/>
+   <packageId value="care"/>
+   <license value="MIT"/>
+   <fhirVersion value="5.0.0"/>
+   <dependsOn id="hl7tx">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+         <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+      </extension>
+      <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+      <packageId value="hl7.terminology.r5"/>
+      <version value="7.0.0"/>
+   </dependsOn>
+   <dependsOn id="hl7ext">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+         <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+      </extension>
+      <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+      <packageId value="hl7.fhir.uv.extensions.r5"/>
+      <version value="5.2.0"/>
+   </dependsOn>
+   <dependsOn>
+      <uri value="http://hl7.org/fhir"/>
+      <packageId value="hl7.fhir.r5.core"/>
+      <version value="5.0.0"/>
+   </dependsOn>
+   <definition>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+         <valueCode value="hl7.fhir.uv.tools.r5#0.8.0"/>
+      </extension>
+      <grouping id="-dyn-capabilitystatement">
+         <name value="Behavior: Capability Statements"/>
+         <description value="The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."/>
+      </grouping>
+      <grouping id="-str-profile">
+         <name value="Structures: Resource Profiles"/>
+         <description value="These define constraints on FHIR resources for systems conforming to this implementation guide."/>
+      </grouping>
+      <grouping id="-str-extension">
+         <name value="Structures: Extension Definitions"/>
+         <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
+      </grouping>
+      <grouping id="-term-valueset">
+         <name value="Terminology: Value Sets"/>
+         <description value="These define sets of codes used by systems conforming to this implementation guide."/>
+      </grouping>
+      <grouping id="-ex-example">
+         <name value="Example: Example Instances"/>
+         <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like."/>
+      </grouping>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CapabilityStatement"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CapabilityStatement-care-server.html"/>
+         </extension>
+         <reference>
+            <reference value="CapabilityStatement/care-server"/>
+         </reference>
+         <name value="Care FHIR Server Capability Statement"/>
+         <description value="Capability statement for the Care FHIR server, describing the supported resources, operations, and search parameters."/>
+         <groupingId value="-dyn-capabilitystatement"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-account-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-account-profile"/>
+         </reference>
+         <name value="Care Account Profile"/>
+         <description value="Profile for Account resource representing patient accounts and billing information in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-allergy-intolerance-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-allergy-intolerance-profile"/>
+         </reference>
+         <name value="Care Allergy Intolerance Profile"/>
+         <description value="Profile for AllergyIntolerance resource representing patient allergies and intolerances in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-charge-item-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-charge-item-profile"/>
+         </reference>
+         <name value="Care Charge Item Profile"/>
+         <description value="Profile for ChargeItem resource representing chargeable items in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-condition-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-condition-profile"/>
+         </reference>
+         <name value="Care Condition Profile"/>
+         <description value="Profile for Condition resource representing patient conditions, diagnoses, and health problems in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-consent-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-consent-profile"/>
+         </reference>
+         <name value="Care Consent Profile"/>
+         <description value="Profile for Consent resource representing patient consents in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-device-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-device-profile"/>
+         </reference>
+         <name value="Care Device Profile"/>
+         <description value="Profile for Device resource representing medical devices and equipment in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-diagnostic-report-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-diagnostic-report-profile"/>
+         </reference>
+         <name value="Care Diagnostic Report Profile"/>
+         <description value="Profile for DiagnosticReport resource representing diagnostic test results and reports in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-encounter-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-encounter-profile"/>
+         </reference>
+         <name value="Care Encounter Profile"/>
+         <description value="Profile for Encounter resource representing patient visits and interactions in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-facility-organization-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-facility-organization-profile"/>
+         </reference>
+         <name value="Care Facility Organization Profile"/>
+         <description value="Profile for Organization resource representing facility-scoped organizations in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-healthcare-service-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-healthcare-service-profile"/>
+         </reference>
+         <name value="Care Healthcare Service Profile"/>
+         <description value="Profile for HealthcareService resource representing healthcare services offered in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-invoice-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-invoice-profile"/>
+         </reference>
+         <name value="Care Invoice Profile"/>
+         <description value="Profile for Invoice resource representing billing invoices in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-location-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-location-profile"/>
+         </reference>
+         <name value="Care Location Profile"/>
+         <description value="Profile for Location resource representing facility locations, beds, rooms, and other physical spaces in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-medication-administration-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-medication-administration-profile"/>
+         </reference>
+         <name value="Care Medication Administration Profile"/>
+         <description value="Profile for MedicationAdministration resource representing medication administration events in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-medication-dispense-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-medication-dispense-profile"/>
+         </reference>
+         <name value="Care Medication Dispense Profile"/>
+         <description value="Profile for MedicationDispense resource representing medication dispensing events in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-medication-request-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-medication-request-profile"/>
+         </reference>
+         <name value="Care Medication Request Profile"/>
+         <description value="Profile for MedicationRequest resource representing medication prescriptions and requests in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-medication-statement-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-medication-statement-profile"/>
+         </reference>
+         <name value="Care Medication Statement Profile"/>
+         <description value="Profile for MedicationStatement resource representing patient medication usage statements in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-observation-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-observation-profile"/>
+         </reference>
+         <name value="Care Observation Profile"/>
+         <description value="Profile for Observation resource representing clinical observations, measurements, and assessments in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-organization-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-organization-profile"/>
+         </reference>
+         <name value="Care Organization Profile"/>
+         <description value="Profile for Organization resource representing organizational structures in the Care system, including hierarchical relationships."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-patient-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-patient-profile"/>
+         </reference>
+         <name value="Care Patient Profile"/>
+         <description value="A profile that accurately represents patient demographic and contact details as specified in the Care EMR system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-payment-reconciliation-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-payment-reconciliation-profile"/>
+         </reference>
+         <name value="Care Payment Reconciliation Profile"/>
+         <description value="Profile for PaymentReconciliation resource representing payment reconciliations in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-questionnaire-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-questionnaire-profile"/>
+         </reference>
+         <name value="Care Questionnaire Profile"/>
+         <description value="Profile for Questionnaire resource representing forms and questionnaires in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-schedule-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-schedule-profile"/>
+         </reference>
+         <name value="Care Schedule Profile"/>
+         <description value="Profile for Schedule resource representing appointment schedules in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-service-request-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-service-request-profile"/>
+         </reference>
+         <name value="Care Service Request Profile"/>
+         <description value="Profile for ServiceRequest resource representing service requests and orders in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-specimen-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-specimen-profile"/>
+         </reference>
+         <name value="Care Specimen Profile"/>
+         <description value="Profile for Specimen resource representing biological specimens in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-supply-delivery-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-supply-delivery-profile"/>
+         </reference>
+         <name value="Care Supply Delivery Profile"/>
+         <description value="Profile for SupplyDelivery resource representing supply deliveries in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-supply-request-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-supply-request-profile"/>
+         </reference>
+         <name value="Care Supply Request Profile"/>
+         <description value="Profile for SupplyRequest resource representing supply requests in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-current-address-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-current-address-extension"/>
+         </reference>
+         <name value="Care Current Address Extension"/>
+         <description value="Patient's current home address as plain text."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-facility-scope-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-facility-scope-extension"/>
+         </reference>
+         <name value="Care Facility Scope Extension"/>
+         <description value="Extension to indicate facility scoping for resources that can be scoped to a specific facility."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-organization-hierarchy-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-organization-hierarchy-extension"/>
+         </reference>
+         <name value="Care Organization Hierarchy Extension"/>
+         <description value="Extension to capture organization hierarchy relationships including parent, root organization, and level cache for efficient querying."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-permanent-address-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-permanent-address-extension"/>
+         </reference>
+         <name value="Care Permanent Address Extension"/>
+         <description value="Patient's permanent billing address as plain text."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-phone-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-phone-extension"/>
+         </reference>
+         <name value="Care Phone Extension"/>
+         <description value="A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-tags-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-tags-extension"/>
+         </reference>
+         <name value="Care Tags Extension"/>
+         <description value="Extension to capture tags and metadata for resources. Tags are used for categorization and filtering."/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-condition-status.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-condition-status"/>
+         </reference>
+         <name value="Care Condition Status"/>
+         <description value="Value set for condition clinical and verification statuses used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-encounter-status.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-encounter-status"/>
+         </reference>
+         <name value="Care Encounter Status"/>
+         <description value="Value set for encounter statuses used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-location-status.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-location-status"/>
+         </reference>
+         <name value="Care Location Status"/>
+         <description value="Value set for location statuses used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-medication-status.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-medication-status"/>
+         </reference>
+         <name value="Care Medication Status"/>
+         <description value="Value set for medication request and statement statuses used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-observation-status.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-observation-status"/>
+         </reference>
+         <name value="Care Observation Status"/>
+         <description value="Value set for observation statuses used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-care-organization-types.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/care-organization-types"/>
+         </reference>
+         <name value="Care Organization Types"/>
+         <description value="Value set for organization types used in the Care system."/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Organization"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Organization-care-organization-example.html"/>
+         </extension>
+         <reference>
+            <reference value="Organization/care-organization-example"/>
+         </reference>
+         <name value="Care Hospital"/>
+         <description value="A healthcare facility in the Care network"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-organization-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Condition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Condition-care-condition-example.html"/>
+         </extension>
+         <reference>
+            <reference value="Condition/care-condition-example"/>
+         </reference>
+         <name value="Example Condition - care-condition-example"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-condition-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Encounter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Encounter-care-encounter-example.html"/>
+         </extension>
+         <reference>
+            <reference value="Encounter/care-encounter-example"/>
+         </reference>
+         <name value="Example Encounter - care-encounter-example"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-encounter-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="MedicationRequest"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="MedicationRequest-care-medication-request-example.html"/>
+         </extension>
+         <reference>
+            <reference value="MedicationRequest/care-medication-request-example"/>
+         </reference>
+         <name value="Example MedicationRequest - care-medication-request-example"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-medication-request-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Observation"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Observation-care-observation-example.html"/>
+         </extension>
+         <reference>
+            <reference value="Observation/care-observation-example"/>
+         </reference>
+         <name value="Example Observation - care-observation-example"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-observation-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-care-patient-example.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/care-patient-example"/>
+         </reference>
+         <name value="Example Patient - care-patient-example"/>
+         <exampleCanonical value="https://fhir.ohc.network/StructureDefinition/care-patient-profile"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <page>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="toc.html"/>
+         </extension>
+         <nameUrl value="toc.html"/>
+         <title value="Table of Contents"/>
+         <generation value="html"/>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="index.html"/>
+            </extension>
+            <nameUrl value="index.html"/>
+            <title value="Home"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="profiles.html"/>
+            </extension>
+            <nameUrl value="profiles.html"/>
+            <title value="Profiles"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="extensions.html"/>
+            </extension>
+            <nameUrl value="extensions.html"/>
+            <title value="Extensions"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="terminology.html"/>
+            </extension>
+            <nameUrl value="terminology.html"/>
+            <title value="Terminology"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="examples.html"/>
+            </extension>
+            <nameUrl value="examples.html"/>
+            <title value="Examples"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="mapping.html"/>
+            </extension>
+            <nameUrl value="mapping.html"/>
+            <title value="Django Model Mapping"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="implementation.html"/>
+            </extension>
+            <nameUrl value="implementation.html"/>
+            <title value="Implementation Notes"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="quality-assurance.html"/>
+            </extension>
+            <nameUrl value="quality-assurance.html"/>
+            <title value="Quality Assurance"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <nameUrl value="artifacts.html"/>
+            <title value="Artifacts Summary"/>
+            <generation value="html"/>
+            <page>
+               <nameUrl value="CapabilityStatement-care-server.html"/>
+               <title value="Care FHIR Server Capability Statement"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-account-profile.html"/>
+               <title value="Care Account Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-allergy-intolerance-profile.html"/>
+               <title value="Care Allergy Intolerance Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-charge-item-profile.html"/>
+               <title value="Care Charge Item Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-condition-profile.html"/>
+               <title value="Care Condition Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-consent-profile.html"/>
+               <title value="Care Consent Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-device-profile.html"/>
+               <title value="Care Device Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-diagnostic-report-profile.html"/>
+               <title value="Care Diagnostic Report Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-encounter-profile.html"/>
+               <title value="Care Encounter Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-facility-organization-profile.html"/>
+               <title value="Care Facility Organization Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-healthcare-service-profile.html"/>
+               <title value="Care Healthcare Service Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-invoice-profile.html"/>
+               <title value="Care Invoice Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-location-profile.html"/>
+               <title value="Care Location Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-medication-administration-profile.html"/>
+               <title value="Care Medication Administration Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-medication-dispense-profile.html"/>
+               <title value="Care Medication Dispense Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-medication-request-profile.html"/>
+               <title value="Care Medication Request Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-medication-statement-profile.html"/>
+               <title value="Care Medication Statement Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-observation-profile.html"/>
+               <title value="Care Observation Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-organization-profile.html"/>
+               <title value="Care Organization Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-patient-profile.html"/>
+               <title value="Care Patient Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-payment-reconciliation-profile.html"/>
+               <title value="Care Payment Reconciliation Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-questionnaire-profile.html"/>
+               <title value="Care Questionnaire Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-schedule-profile.html"/>
+               <title value="Care Schedule Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-service-request-profile.html"/>
+               <title value="Care Service Request Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-specimen-profile.html"/>
+               <title value="Care Specimen Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-supply-delivery-profile.html"/>
+               <title value="Care Supply Delivery Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-supply-request-profile.html"/>
+               <title value="Care Supply Request Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-current-address-extension.html"/>
+               <title value="Care Current Address Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-facility-scope-extension.html"/>
+               <title value="Care Facility Scope Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-organization-hierarchy-extension.html"/>
+               <title value="Care Organization Hierarchy Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-permanent-address-extension.html"/>
+               <title value="Care Permanent Address Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-phone-extension.html"/>
+               <title value="Care Phone Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-care-tags-extension.html"/>
+               <title value="Care Tags Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-condition-status.html"/>
+               <title value="Care Condition Status"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-encounter-status.html"/>
+               <title value="Care Encounter Status"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-location-status.html"/>
+               <title value="Care Location Status"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-medication-status.html"/>
+               <title value="Care Medication Status"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-observation-status.html"/>
+               <title value="Care Observation Status"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-care-organization-types.html"/>
+               <title value="Care Organization Types"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Condition-care-condition-example.html"/>
+               <title value="Example Condition - care-condition-example"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Encounter-care-encounter-example.html"/>
+               <title value="Example Encounter - care-encounter-example"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="MedicationRequest-care-medication-request-example.html"/>
+               <title value="Example MedicationRequest - care-medication-request-example"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Observation-care-observation-example.html"/>
+               <title value="Example Observation - care-observation-example"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Organization-care-organization-example.html"/>
+               <title value="Care Hospital"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Patient-care-patient-example.html"/>
+               <title value="Example Patient - care-patient-example"/>
+               <generation value="generated"/>
+            </page>
+         </page>
+      </page>
+      <parameter>
+         <code value="copyrightyear"/>
+         <value value="2025+"/>
+      </parameter>
+      <parameter>
+         <code value="releaselabel"/>
+         <value value="ci-build"/>
+      </parameter>
+      <parameter>
+         <code value="autoload-resources"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/capabilities"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/examples"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/extensions"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/models"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/operations"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/profiles"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/resources"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/vocabulary"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/maps"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/testing"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/history"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="fsh-generated/resources"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="template/config"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="input/images"/>
+      </parameter>
+      <parameter>
+         <code value="path-liquid"/>
+         <value value="template/liquid"/>
+      </parameter>
+      <parameter>
+         <code value="path-liquid"/>
+         <value value="input/liquid"/>
+      </parameter>
+      <parameter>
+         <code value="path-qa"/>
+         <value value="temp/qa"/>
+      </parameter>
+      <parameter>
+         <code value="path-temp"/>
+         <value value="temp/pages"/>
+      </parameter>
+      <parameter>
+         <code value="path-output"/>
+         <value value="output"/>
+      </parameter>
+      <parameter>
+         <code value="path-tx-cache"/>
+         <value value="input-cache/txcache"/>
+      </parameter>
+      <parameter>
+         <code value="path-suppressed-warnings"/>
+         <value value="input/ignoreWarnings.txt"/>
+      </parameter>
+      <parameter>
+         <code value="path-history"/>
+         <value value="https://fhir.ohc.network/history.html"/>
+      </parameter>
+      <parameter>
+         <code value="template-html"/>
+         <value value="template-page.html"/>
+      </parameter>
+      <parameter>
+         <code value="template-md"/>
+         <value value="template-page-md.html"/>
+      </parameter>
+      <parameter>
+         <code value="apply-contact"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-context"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-copyright"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-jurisdiction"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-license"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-publisher"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-version"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-wg"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="active-tables"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="fmm-definition"/>
+         <value value="http://hl7.org/fhir/versions.html#maturity"/>
+      </parameter>
+      <parameter>
+         <code value="propagate-status"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="excludelogbinaryformat"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="tabbed-snapshots"/>
+         <value value="true"/>
+      </parameter>
+   </definition>
+</ImplementationGuide>

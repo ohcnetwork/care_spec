@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-supply-delivery-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-supply-delivery-profile",
+  "version": "0.1.0",
+  "name": "CareSupplyDeliveryProfile",
+  "title": "Care Supply Delivery Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for SupplyDelivery resource representing supply deliveries in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "SupplyDelivery",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/SupplyDelivery",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "SupplyDelivery",
+        "path": "SupplyDelivery",
+        "short": "Care Supply Delivery Profile"
+      },
+      {
+        "id": "SupplyDelivery.status",
+        "path": "SupplyDelivery.status",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SupplyDelivery.patient",
+        "path": "SupplyDelivery.patient",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SupplyDelivery.suppliedItem",
+        "path": "SupplyDelivery.suppliedItem",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "SupplyDelivery.supplier",
+        "path": "SupplyDelivery.supplier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

@@ -20,27 +20,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install Jekyll and Ruby
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          export GEM_HOME="$HOME/gems"
-          export PATH="$HOME/gems/bin:$PATH"
-          gem install jekyll bundler
-          echo "GEM_HOME=$GEM_HOME" >> $GITHUB_ENV
-          echo "PATH=$PATH" >> $GITHUB_ENV
-
-      - name: Install SUSHI
-        run: npm install -g fsh-sushi
-
-      - name: Run SUSHI
-        run: sushi .
-
       - name: Cache IG Publisher
         uses: actions/cache@v4
         with:
@@ -56,6 +35,12 @@ jobs:
 
       - name: Update IG Publisher
         run: ./_updatePublisher.sh -y
+
+      - name: Validate JSON resources
+        run: |
+          find input/resources -name "*.json" -exec echo "Validating {}" \;
+          # Basic JSON syntax validation
+          find input/resources -name "*.json" -exec python3 -m json.tool {} > /dev/null \;
 
       - name: Build IG
         run: ./_genonce.sh

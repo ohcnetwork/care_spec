@@ -1,0 +1,158 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-encounter-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-encounter-profile",
+  "version": "0.1.0",
+  "name": "CareEncounterProfile",
+  "title": "Care Encounter Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for Encounter resource representing patient visits and interactions in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "short": "Care Encounter Profile"
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "short": "Encounter Status",
+        "definition": "Status of the encounter",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "short": "Encounter Class",
+        "definition": "Classification of encounter type",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "short": "Patient",
+        "definition": "The patient present at the encounter",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "short": "Period",
+        "definition": "The start and end time of the encounter",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "short": "Service Provider",
+        "definition": "The organization that is primarily responsible for this Encounter's services",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.location",
+        "path": "Encounter.location",
+        "short": "Location",
+        "definition": "List of locations where the patient has been",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "short": "Location Reference",
+        "definition": "The location where the encounter takes place",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.priority",
+        "path": "Encounter.priority",
+        "short": "Priority",
+        "definition": "Indicates the urgency of the encounter",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.hospitalization",
+        "path": "Encounter.hospitalization",
+        "short": "Hospitalization",
+        "definition": "Details about the admission to a healthcare service",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Encounter.extension:dischargeSummaryAdvice",
+        "path": "Encounter.extension",
+        "sliceName": "dischargeSummaryAdvice",
+        "short": "Discharge Summary Advice",
+        "definition": "Discharge summary and advice",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/encounter-dischargeDisposition"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

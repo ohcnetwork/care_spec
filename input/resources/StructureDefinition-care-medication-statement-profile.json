@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-medication-statement-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-medication-statement-profile",
+  "version": "0.1.0",
+  "name": "CareMedicationStatementProfile",
+  "title": "Care Medication Statement Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for MedicationStatement resource representing patient medication usage statements in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement",
+        "short": "Care Medication Statement Profile"
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.effective[x]",
+        "path": "MedicationStatement.effective[x]",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}
+

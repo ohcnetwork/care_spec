@@ -1,0 +1,253 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-phone-extension",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-phone-extension",
+  "version": "0.1.0",
+  "name": "CarePhoneExtension",
+  "title": "Care Phone Extension",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "A simple extension to hold patient's phone numbers, including primary and emergency, as plain strings.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "snapshot": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Phone Extension",
+        "definition": "Extension for patient phone numbers",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.id",
+        "path": "Extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "xml:id (or id in JSON)",
+        "definition": "Unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+                "valueUrl": "string"
+              }
+            ],
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Extension",
+        "definition": "An Extension",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:primaryPhone",
+        "path": "Extension.extension",
+        "sliceName": "primaryPhone",
+        "short": "Primary Phone Number",
+        "definition": "Patient's primary phone number",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:primaryPhone.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "primaryPhone"
+      },
+      {
+        "id": "Extension.extension:primaryPhone.valueString",
+        "path": "Extension.extension.valueString",
+        "short": "Primary Phone",
+        "definition": "Primary phone number as string",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:emergencyPhone",
+        "path": "Extension.extension",
+        "sliceName": "emergencyPhone",
+        "short": "Emergency Phone Number",
+        "definition": "Patient's emergency contact phone number",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:emergencyPhone.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "emergencyPhone"
+      },
+      {
+        "id": "Extension.extension:emergencyPhone.valueString",
+        "path": "Extension.extension.valueString",
+        "short": "Emergency Phone",
+        "definition": "Emergency contact phone number as string",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-phone-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 0,
+        "max": "0"
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Phone Extension",
+        "definition": "Extension for patient phone numbers"
+      },
+      {
+        "id": "Extension.extension:primaryPhone",
+        "path": "Extension.extension",
+        "sliceName": "primaryPhone",
+        "short": "Primary Phone Number",
+        "definition": "Patient's primary phone number",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:primaryPhone.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "primaryPhone"
+      },
+      {
+        "id": "Extension.extension:primaryPhone.valueString",
+        "path": "Extension.extension.valueString",
+        "short": "Primary Phone",
+        "definition": "Primary phone number as string",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:emergencyPhone",
+        "path": "Extension.extension",
+        "sliceName": "emergencyPhone",
+        "short": "Emergency Phone Number",
+        "definition": "Patient's emergency contact phone number",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:emergencyPhone.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "emergencyPhone"
+      },
+      {
+        "id": "Extension.extension:emergencyPhone.valueString",
+        "path": "Extension.extension.valueString",
+        "short": "Emergency Phone",
+        "definition": "Emergency contact phone number as string",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-phone-extension"
+      }
+    ]
+  }
+}
+

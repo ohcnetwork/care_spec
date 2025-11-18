@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-questionnaire-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-questionnaire-profile",
+  "version": "0.1.0",
+  "name": "CareQuestionnaireProfile",
+  "title": "Care Questionnaire Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for Questionnaire resource representing forms and questionnaires in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Questionnaire",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Questionnaire",
+        "path": "Questionnaire",
+        "short": "Care Questionnaire Profile"
+      },
+      {
+        "id": "Questionnaire.status",
+        "path": "Questionnaire.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.title",
+        "path": "Questionnaire.title",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Questionnaire.description",
+        "path": "Questionnaire.description",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Questionnaire.item",
+        "path": "Questionnaire.item",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}
+

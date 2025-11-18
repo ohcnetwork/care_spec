@@ -1,0 +1,218 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-patient-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-patient-profile",
+  "version": "0.1.0",
+  "name": "CarePatientProfile",
+  "title": "Care Patient Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "A profile that accurately represents patient demographic and contact details as specified in the Care EMR system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient",
+        "short": "Care Patient Profile",
+        "definition": "Patient profile with Care-specific extensions"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "short": "Patient Name",
+        "definition": "Patient's full name",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "short": "Gender",
+        "definition": "Patient's gender",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "short": "Date of Birth",
+        "definition": "Patient's date of birth",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "short": "Address",
+        "definition": "Patient's address",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.address.postalCode",
+        "path": "Patient.address.postalCode",
+        "short": "Postal Code",
+        "definition": "Postal code (pincode)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "short": "Marital Status",
+        "definition": "Patient's marital status",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/marital-status"
+        }
+      },
+      {
+        "id": "Patient.deceased[x]",
+        "path": "Patient.deceased[x]",
+        "short": "Deceased",
+        "definition": "Indicates if the patient is deceased and when",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.deceasedDateTime",
+        "path": "Patient.deceasedDateTime",
+        "short": "Deceased Date Time",
+        "definition": "Date and time of death",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.extension",
+        "path": "Patient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.extension:phoneNumbers",
+        "path": "Patient.extension",
+        "sliceName": "phoneNumbers",
+        "short": "Phone Numbers",
+        "definition": "Patient's phone numbers (primary and emergency)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-phone-extension"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:currentAddress",
+        "path": "Patient.extension",
+        "sliceName": "currentAddress",
+        "short": "Current Address",
+        "definition": "Patient's current home address as plain text",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-current-address-extension"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:permanentAddress",
+        "path": "Patient.extension",
+        "sliceName": "permanentAddress",
+        "short": "Permanent Address",
+        "definition": "Patient's permanent billing address as plain text",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-permanent-address-extension"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:nationality",
+        "path": "Patient.extension",
+        "sliceName": "nationality",
+        "short": "Nationality",
+        "definition": "Patient's nationality",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/patient-nationality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:bloodGroup",
+        "path": "Patient.extension",
+        "sliceName": "bloodGroup",
+        "short": "Blood Group",
+        "definition": "Patient's blood group",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

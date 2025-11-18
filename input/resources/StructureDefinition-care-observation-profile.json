@@ -1,0 +1,151 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-observation-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-observation-profile",
+  "version": "0.1.0",
+  "name": "CareObservationProfile",
+  "title": "Care Observation Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for Observation resource representing clinical observations, measurements, and assessments in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Care Observation Profile"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "short": "Status",
+        "definition": "Status of the observation",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "short": "Category",
+        "definition": "Classification of type of observation",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Observation Code",
+        "definition": "Type of observation",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Subject",
+        "definition": "Who and/or what the observation is about",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "short": "Encounter",
+        "definition": "Healthcare event during which this observation is made",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Effective Time",
+        "definition": "Clinically relevant time/time-period for observation",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Value",
+        "definition": "Actual result",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "short": "Note",
+        "definition": "Comments about the observation",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "short": "Body Site",
+        "definition": "Observed body part",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "short": "Method",
+        "definition": "How it was done",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "short": "Component",
+        "definition": "Component results",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}
+

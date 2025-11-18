@@ -1,0 +1,131 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-current-address-extension",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-current-address-extension",
+  "version": "0.1.0",
+  "name": "CareCurrentAddressExtension",
+  "title": "Care Current Address Extension",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Patient's current home address as plain text.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "snapshot": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Current Address Extension",
+        "definition": "Extension for patient's current home address",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.id",
+        "path": "Extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+                "valueUrl": "string"
+              }
+            ],
+            "code": "http://hl7.org/fhirpath/System.String"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-current-address-extension"
+      },
+      {
+        "id": "Extension.valueString",
+        "path": "Extension.valueString",
+        "short": "Current Address",
+        "definition": "Patient's current home address as plain text",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Current Address Extension",
+        "definition": "Extension for patient's current home address"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-current-address-extension"
+      },
+      {
+        "id": "Extension.valueString",
+        "path": "Extension.valueString",
+        "short": "Current Address",
+        "definition": "Patient's current home address as plain text",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}
+

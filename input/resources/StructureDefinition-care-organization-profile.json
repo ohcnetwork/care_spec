@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-organization-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-organization-profile",
+  "version": "0.1.0",
+  "name": "CareOrganizationProfile",
+  "title": "Care Organization Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for Organization resource representing organizational structures in the Care system, including hierarchical relationships.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "short": "Care Organization Profile"
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "short": "Active",
+        "definition": "Whether the organization's record is still in active use",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "short": "Organization Type",
+        "definition": "Kind of organization",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "short": "Organization Name",
+        "definition": "Name used for the organization",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.description",
+        "path": "Organization.description",
+        "short": "Description",
+        "definition": "Additional details about the organization",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "short": "Part Of",
+        "definition": "The organization of which this organization forms a part",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-organization-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.extension:hierarchy",
+        "path": "Organization.extension",
+        "sliceName": "hierarchy",
+        "short": "Organization Hierarchy",
+        "definition": "Extension for organization hierarchy information",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.ohc.network/StructureDefinition/care-organization-hierarchy-extension"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

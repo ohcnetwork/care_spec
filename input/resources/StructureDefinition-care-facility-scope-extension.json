@@ -1,0 +1,105 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-facility-scope-extension",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension",
+  "version": "0.1.0",
+  "name": "CareFacilityScopeExtension",
+  "title": "Care Facility Scope Extension",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Extension to indicate facility scoping for resources that can be scoped to a specific facility.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Resource"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "snapshot": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Facility Scope Extension",
+        "definition": "Extension for facility scoping",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+      },
+      {
+        "id": "Extension.valueReference",
+        "path": "Extension.valueReference",
+        "short": "Facility Reference",
+        "definition": "Reference to the Facility resource",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Facility Scope Extension"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-facility-scope-extension"
+      },
+      {
+        "id": "Extension.valueReference",
+        "path": "Extension.valueReference",
+        "short": "Facility Reference",
+        "definition": "Reference to the Facility resource",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

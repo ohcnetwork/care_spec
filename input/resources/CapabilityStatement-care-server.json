@@ -1,0 +1,90 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "care-server",
+  "url": "https://fhir.ohc.network/CapabilityStatement/care-server",
+  "version": "0.1.0",
+  "name": "CareFHIRServer",
+  "title": "Care FHIR Server Capability Statement",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Capability statement for the Care FHIR server, describing the supported resources, operations, and search parameters.",
+  "kind": "instance",
+  "software": {
+    "name": "Care FHIR Server",
+    "version": "0.1.0"
+  },
+  "implementation": {
+    "description": "Care FHIR API Server",
+    "url": "https://careapi.ohc.network/fhir"
+  },
+  "fhirVersion": "5.0.0",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "RESTful API for Care FHIR resources",
+      "resource": [
+        {
+          "type": "Patient",
+          "profile": "https://fhir.ohc.network/StructureDefinition/care-patient-profile",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "name",
+              "type": "string",
+              "documentation": "Search by patient name"
+            },
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "Search by patient identifier"
+            }
+          ]
+        },
+        {
+          "type": "Encounter",
+          "profile": "https://fhir.ohc.network/StructureDefinition/care-encounter-profile",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Observation",
+          "profile": "https://fhir.ohc.network/StructureDefinition/care-observation-profile",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

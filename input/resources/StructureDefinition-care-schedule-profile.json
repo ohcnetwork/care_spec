@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-schedule-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-schedule-profile",
+  "version": "0.1.0",
+  "name": "CareScheduleProfile",
+  "title": "Care Schedule Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for Schedule resource representing appointment schedules in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Schedule",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Schedule",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Schedule",
+        "path": "Schedule",
+        "short": "Care Schedule Profile"
+      },
+      {
+        "id": "Schedule.active",
+        "path": "Schedule.active",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.serviceType",
+        "path": "Schedule.serviceType",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Schedule.actor",
+        "path": "Schedule.actor",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.planningHorizon",
+        "path": "Schedule.planningHorizon",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Schedule.comment",
+        "path": "Schedule.comment",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}
+

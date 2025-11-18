@@ -1,0 +1,89 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-consent-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-consent-profile",
+  "version": "0.1.0",
+  "name": "CareConsentProfile",
+  "title": "Care Consent Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for Consent resource representing patient consents in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Consent",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Consent",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Consent",
+        "path": "Consent",
+        "short": "Care Consent Profile"
+      },
+      {
+        "id": "Consent.status",
+        "path": "Consent.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Consent.category",
+        "path": "Consent.category",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Consent.dateTime",
+        "path": "Consent.dateTime",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Consent.period",
+        "path": "Consent.period",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Consent.encounter",
+        "path": "Consent.encounter",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Consent.decision",
+        "path": "Consent.decision",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Consent.verification",
+        "path": "Consent.verification",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Consent.note",
+        "path": "Consent.note",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,163 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-tags-extension",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-tags-extension",
+  "version": "0.1.0",
+  "name": "CareTagsExtension",
+  "title": "Care Tags Extension",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Extension to capture tags and metadata for resources. Tags are used for categorization and filtering.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Resource"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "snapshot": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Tags Extension",
+        "definition": "Extension for tags and metadata",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Extension.extension:tags",
+        "path": "Extension.extension",
+        "sliceName": "tags",
+        "short": "Tags",
+        "definition": "Array of tag IDs",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:tags.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "tags"
+      },
+      {
+        "id": "Extension.extension:tags.valueString",
+        "path": "Extension.extension.valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:metadata",
+        "path": "Extension.extension",
+        "sliceName": "metadata",
+        "short": "Metadata",
+        "definition": "Additional metadata as JSON object",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:metadata.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "metadata"
+      },
+      {
+        "id": "Extension.extension:metadata.valueString",
+        "path": "Extension.extension.valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Care Tags Extension"
+      },
+      {
+        "id": "Extension.extension:tags",
+        "path": "Extension.extension",
+        "sliceName": "tags",
+        "short": "Tags",
+        "definition": "Array of tag IDs",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:tags.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "tags"
+      },
+      {
+        "id": "Extension.extension:metadata",
+        "path": "Extension.extension",
+        "sliceName": "metadata",
+        "short": "Metadata",
+        "definition": "Additional metadata as JSON object",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:metadata.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "metadata"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.ohc.network/StructureDefinition/care-tags-extension"
+      }
+    ]
+  }
+}
+

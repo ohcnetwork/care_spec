@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-account-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-account-profile",
+  "version": "0.1.0",
+  "name": "CareAccountProfile",
+  "title": "Care Account Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Profile for Account resource representing patient accounts and billing information in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Account",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Account",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Account",
+        "path": "Account",
+        "short": "Care Account Profile"
+      },
+      {
+        "id": "Account.status",
+        "path": "Account.status",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.name",
+        "path": "Account.name",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.servicePeriod",
+        "path": "Account.servicePeriod",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Account.subject",
+        "path": "Account.subject",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Account.description",
+        "path": "Account.description",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}
+

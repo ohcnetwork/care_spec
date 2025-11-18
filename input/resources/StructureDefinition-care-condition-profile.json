@@ -1,0 +1,159 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-condition-profile",
+  "url": "https://fhir.ohc.network/StructureDefinition/care-condition-profile",
+  "version": "0.1.0",
+  "name": "CareConditionProfile",
+  "title": "Care Condition Profile",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "Profile for Condition resource representing patient conditions, diagnoses, and health problems in the Care system.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition",
+        "path": "Condition",
+        "short": "Care Condition Profile"
+      },
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "short": "Clinical Status",
+        "definition": "The clinical status of the condition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "short": "Verification Status",
+        "definition": "The verification status to support the clinical status of the condition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "short": "Category",
+        "definition": "A category assigned to the condition",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "short": "Severity",
+        "definition": "A subjective assessment of the severity of the condition",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "short": "Condition Code",
+        "definition": "Identification of the condition, problem or diagnosis",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "short": "Body Site",
+        "definition": "Anatomical location, if relevant",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "short": "Subject",
+        "definition": "Who has the condition",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-patient-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "short": "Encounter",
+        "definition": "Encounter created as part of",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.ohc.network/StructureDefinition/care-encounter-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.onset[x]",
+        "path": "Condition.onset[x]",
+        "short": "Onset",
+        "definition": "Estimated or actual date, date-time, or age",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "short": "Abatement",
+        "definition": "When in resolution/remission",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "short": "Recorded Date",
+        "definition": "When the condition was first recorded",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Condition.note",
+        "path": "Condition.note",
+        "short": "Note",
+        "definition": "Additional information about the Condition",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}
+

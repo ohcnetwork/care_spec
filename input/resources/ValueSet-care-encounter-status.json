@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "id": "care-encounter-status",
+  "url": "https://fhir.ohc.network/ValueSet/care-encounter-status",
+  "version": "0.1.0",
+  "name": "CareEncounterStatus",
+  "title": "Care Encounter Status",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "description": "Value set for encounter statuses used in the Care system.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/encounter-status"
+      }
+    ]
+  }
+}
+

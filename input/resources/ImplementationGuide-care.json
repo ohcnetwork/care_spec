@@ -1,0 +1,145 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "care",
+  "url": "https://fhir.ohc.network/ImplementationGuide/care",
+  "version": "0.1.0",
+  "name": "Care",
+  "title": "Care FHIR Implementation Guide",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-01-27",
+  "publisher": "Open Healthcare Network",
+  "contact": [
+    {
+      "name": "Open Healthcare Network",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://ohc.network"
+        }
+      ]
+    }
+  ],
+  "description": "FHIR Implementation Guide for Care - a Digital Public Good enabling Decentralized Administration of Healthcare. This IG documents all Care EMR models as FHIR R5 resources, profiles, and extensions.",
+  "copyright": "Copyright © 2025+ Open Healthcare Network",
+  "packageId": "care",
+  "license": "MIT",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.r5.core",
+      "version": "5.0.0",
+      "uri": "http://hl7.org/fhir"
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "administration",
+        "name": "Administration",
+        "description": "Foundational administrative resources: Patient, Related Person, User, User Roles, Permissions, Consent, Facility, Department, Location, Care Team, Device"
+      },
+      {
+        "id": "definitions",
+        "name": "Definitions",
+        "description": "Definitional resources: Questionnaire, Observation Definition, Specimen Definition, Device Definition, ValueSet, Code System, Plan Definition, Activity Definition"
+      },
+      {
+        "id": "clinical",
+        "name": "Clinical",
+        "description": "Clinical resources: Encounters, Allergy Intolerance, Immunization, Risk Assessment, Procedure, Questionnaire Response, Observation, Condition, Care Plan, Goal, DocumentReference, Medication Request, Medication Statement, Medication Administration, Task, Threads, Messages"
+      },
+      {
+        "id": "scheduling",
+        "name": "Scheduling",
+        "description": "Scheduling resources: Schedule, Token Slot, Token Booking, Availability, Availability Exception"
+      },
+      {
+        "id": "pharmacy-inventory",
+        "name": "Pharmacy and Inventory",
+        "description": "Pharmacy and inventory resources: Medication Dispense, Inventory Item, InventoryReport, Transport, Device Dispense, Supply Request, SupplyDelivery"
+      },
+      {
+        "id": "labs-diagnostics",
+        "name": "Labs and Diagnostics",
+        "description": "Laboratory and diagnostic resources: Service Request, Specimen, Media, Diagnostic Report, Imaging Study"
+      },
+      {
+        "id": "billing-accounting",
+        "name": "Billing and Accounting",
+        "description": "Financial resources: Charge Item, Charge Item Definition, Invoice, Account, Payment Notice, Payment Reconciliation, Claim, ClaimResponse, Coverage, Explanation Of Benefit"
+      },
+      {
+        "id": "extensions",
+        "name": "Extensions",
+        "description": "Care-specific extensions"
+      },
+      {
+        "id": "terminology",
+        "name": "Terminology",
+        "description": "Value sets and code systems"
+      }
+    ],
+    "resource": [],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "profiles.html",
+          "title": "Profiles",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "extensions.html",
+          "title": "Extensions",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "terminology.html",
+          "title": "Terminology",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "examples.html",
+          "title": "Examples",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "mapping.html",
+          "title": "Django Model Mapping",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "implementation.html",
+          "title": "Implementation Notes",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "quality-assurance.html",
+          "title": "Quality Assurance",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2025+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}
+

@@ -20,14 +20,17 @@
     }
   ],
   "priority": "routine",
-  "medicationCodeableConcept": {
-    "coding": [
-      {
-        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-        "code": "197806",
-        "display": "Paracetamol 500mg tablet"
-      }
-    ]
+  "doNotPerform": false,
+  "medication": {
+    "concept": {
+      "coding": [
+        {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "197806",
+          "display": "ibuprofen 600 MG Oral Tablet"
+        }
+      ]
+    }
   },
   "subject": {
     "reference": "Patient/care-patient-example"

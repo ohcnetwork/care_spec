@@ -39,8 +39,6 @@
         "path": "Condition.clinicalStatus",
         "short": "Clinical Status",
         "definition": "The clinical status of the condition",
-        "min": 0,
-        "max": "1",
         "mustSupport": true
       },
       {
@@ -48,8 +46,6 @@
         "path": "Condition.verificationStatus",
         "short": "Verification Status",
         "definition": "The verification status to support the clinical status of the condition",
-        "min": 0,
-        "max": "1",
         "mustSupport": true
       },
       {

@@ -132,7 +132,7 @@
         "id": "ActivityDefinition.location",
         "path": "ActivityDefinition.location",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "mustSupport": true
       },
       {

@@ -61,7 +61,7 @@
       {
         "id": "MedicationRequest.doNotPerform",
         "path": "MedicationRequest.doNotPerform",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },

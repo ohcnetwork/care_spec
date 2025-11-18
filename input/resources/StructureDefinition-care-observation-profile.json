@@ -186,16 +186,7 @@
         "short": "Part Of",
         "definition": "A larger event of which this particular observation is a component or step",
         "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.ohc.network/StructureDefinition/care-diagnostic-report-profile",
-              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"
-            ]
-          }
-        ]
+        "max": "*"
       },
       {
         "id": "Observation.focus",

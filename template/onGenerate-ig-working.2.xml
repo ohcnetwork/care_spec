@@ -354,6 +354,23 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-activity-definition-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-activity-definition-profile"/>
+         </reference>
+         <name value="Care Activity Definition Profile"/>
+         <description value="Profile for ActivityDefinition resource representing activity definitions and service catalog items in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-care-allergy-intolerance-profile.html"/>
          </extension>
          <reference>
@@ -361,6 +378,23 @@
          </reference>
          <name value="Care Allergy Intolerance Profile"/>
          <description value="Profile for AllergyIntolerance resource representing patient allergies and intolerances in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-charge-item-definition-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-charge-item-definition-profile"/>
+         </reference>
+         <name value="Care Charge Item Definition Profile"/>
+         <description value="Profile for ChargeItemDefinition resource representing charge item definitions and pricing in the Care system."/>
          <groupingId value="-str-profile"/>
       </resource>
       <resource>
@@ -643,6 +677,23 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-observation-definition-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-observation-definition-profile"/>
+         </reference>
+         <name value="Care Observation Definition Profile"/>
+         <description value="Profile for ObservationDefinition resource representing observation definitions and lab test catalog items in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-care-observation-profile.html"/>
          </extension>
          <reference>
@@ -803,6 +854,23 @@
          </reference>
          <name value="Care Service Request Profile"/>
          <description value="Profile for ServiceRequest resource representing service requests and orders in the Care system."/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-care-specimen-definition-profile.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/care-specimen-definition-profile"/>
+         </reference>
+         <name value="Care Specimen Definition Profile"/>
+         <description value="Profile for SpecimenDefinition resource representing specimen definitions and requirements in the Care system."/>
          <groupingId value="-str-profile"/>
       </resource>
       <resource>

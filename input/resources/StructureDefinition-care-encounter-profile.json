@@ -79,10 +79,10 @@
         ]
       },
       {
-        "id": "Encounter.period",
-        "path": "Encounter.period",
-        "short": "Period",
-        "definition": "The start and end time of the encounter",
+        "id": "Encounter.actualPeriod",
+        "path": "Encounter.actualPeriod",
+        "short": "Actual Period",
+        "definition": "The actual start and end time of the encounter",
         "min": 0,
         "max": "1",
         "mustSupport": true
@@ -170,9 +170,9 @@
         "mustSupport": true
       },
       {
-        "id": "Encounter.hospitalization",
-        "path": "Encounter.hospitalization",
-        "short": "Hospitalization",
+        "id": "Encounter.admission",
+        "path": "Encounter.admission",
+        "short": "Admission",
         "definition": "Details about the admission to a healthcare service",
         "min": 0,
         "max": "1"

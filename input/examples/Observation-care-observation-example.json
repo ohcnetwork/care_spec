@@ -22,8 +22,8 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "85354-9",
-        "display": "Blood pressure panel with all children optional"
+        "code": "29463-7",
+        "display": "Body Weight"
       }
     ]
   },
@@ -35,10 +35,10 @@
   },
   "effectiveDateTime": "2025-01-27T10:30:00Z",
   "valueQuantity": {
-    "value": 120,
-    "unit": "mmHg",
+    "value": 75,
+    "unit": "kg",
     "system": "http://unitsofmeasure.org",
-    "code": "mm[Hg]"
+    "code": "kg"
   }
 }
 

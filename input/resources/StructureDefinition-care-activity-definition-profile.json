@@ -132,15 +132,8 @@
         "id": "ActivityDefinition.location",
         "path": "ActivityDefinition.location",
         "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "https://fhir.ohc.network/StructureDefinition/care-location-profile"
-            ]
-          }
-        ]
+        "max": "*",
+        "mustSupport": true
       },
       {
         "id": "ActivityDefinition.extension",

@@ -9,6 +9,8 @@ on:
 jobs:
   build-ig:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -38,9 +40,11 @@ jobs:
 
       - name: Validate JSON resources
         run: |
-          find input/resources -name "*.json" -exec echo "Validating {}" \;
-          # Basic JSON syntax validation
-          find input/resources -name "*.json" -exec python3 -m json.tool {} > /dev/null \;
+          echo "Validating JSON files..."
+          find input/resources -name "*.json" -print0 | while IFS= read -r -d '' file; do
+            echo "Validating $file"
+            python3 -m json.tool "$file" > /dev/null || exit 1
+          done
 
       - name: Build IG
         run: ./_genonce.sh

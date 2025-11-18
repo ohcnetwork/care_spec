@@ -107,7 +107,7 @@
         "max": "*",
         "type": [
           {
-            "code": "Reference",
+            "code": "canonical",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-specimen-definition-profile"
             ]
@@ -121,7 +121,7 @@
         "max": "*",
         "type": [
           {
-            "code": "Reference",
+            "code": "canonical",
             "targetProfile": [
               "https://fhir.ohc.network/StructureDefinition/care-observation-definition-profile"
             ]
